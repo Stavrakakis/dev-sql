@@ -1,0 +1,5 @@
+FROM mysql
+ENV MYSQL_ALLOW_EMPTY_PASSWORD=yes
+EXPOSE 3306
+RUN printf '[mysqld]\nsql-mode = "STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"\n' >> /etc/mysql/my.cnf
+RUN printf 'wait_timeout = 28800\n' >> /etc/mysql/my.cnf
